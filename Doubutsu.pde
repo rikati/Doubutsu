@@ -13,7 +13,6 @@ void draw() {
   komaList.draw();
 }
 
-
 abstract class AbstractArea {
   int posX;
   int posY;
@@ -194,4 +193,8 @@ class KomaList {
       k.draw();
     }
   }
+}
+
+class GameStatus {
+  int turn = 0;
 }
