@@ -13,7 +13,6 @@ void draw() {
   komaList.draw();
 }
 
-
 abstract class AbstractArea {
   int posX;
   int posY;
