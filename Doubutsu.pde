@@ -105,10 +105,10 @@ class Board {
     if(koma==null){
       komaList.select(x,y);
     }else{
+      koma.move(x,y);
       koma.kStat.selected=false;
     }
   }
-
 }
 
 class KomaStatus {
@@ -154,6 +154,17 @@ abstract class AbstractKoma {
     fill(#FF0000, SQUARESIZE);
     rect(this.x*SQUARESIZE, this.y*SQUARESIZE, SQUARESIZE, SQUARESIZE);
   }
+  
+  void move(int toX, int toY) {
+    this.updatePos(toX, toY);
+  }
+  
+  void updatePos(int toX, int toY) {
+    this.x=toX;
+    this.y=toY;
+    gs.turn = (gs.turn+1)%2;
+  }
+
 }
 
 class Hiyoko extends AbstractKoma {
